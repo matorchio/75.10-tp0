@@ -1,19 +1,36 @@
 package ar.fiuba.tecnicas.rockpaperscissors;
 
-public class Rock 
+public class Rock
 {
-	Rock vs( Scissors scissors )
+	@Override
+	public boolean equals( Object object )
 	{
-		return this;
+		return object instanceof Rock;
 	}
 	
-	Rock vs( Rock rock )
+	@Override 
+	public int hashCode()
 	{
-		return rock;
+		return (int)Math.random();
 	}
 	
-	Paper vs( Paper paper )
+	public Paper vs( Paper other )
 	{
-		return paper;
+		return new Paper();
+	}
+
+	public Rock vs( Rock other )
+	{
+		return new Rock();
+	}
+	
+	public Rock vs( Scissors other )
+	{
+		return new Rock();
+	}
+	
+	public Rock vs( Fire other )
+	{
+		return new Rock();
 	}
 }
